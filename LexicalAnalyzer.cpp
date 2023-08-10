@@ -61,11 +61,8 @@ Token* LexicalAnalyzer::createToken(stack<char> symbolStack, int currentState){
     auto* token = new Token();
     if (this->finalStateMap.find(currentState) == this->finalStateMap.end()){
         string currentSymbols = getTokenValue(symbolStack);
-        string nextSymbol;
-        nextSymbol.push_back(this->inputString[this->currentInputStringIdx]);
-        if (this->inputString[this->currentInputStringIdx] == '\0'){
-            nextSymbol = "end of input stream";
-        }
+        char nextSymbol = this->inputString[this->currentInputStringIdx];
+
 
         if (currentSymbols.at(0) == '\''){
             if (currentSymbols.length() == 1){
@@ -82,9 +79,9 @@ Token* LexicalAnalyzer::createToken(stack<char> symbolStack, int currentState){
         if (currentSymbols.at(0) == '!'){
             cout << "= expected";
         }
-        cout <<" but the input symbol is " << nextSymbol << endl;
-        cout << "line: " << this->symbolTracer.line << ", at: " << this->symbolTracer.offset << endl;
-        cout << getTokenValue(symbolStack) << endl;
+        cout <<" but the input symbol is '" << nextSymbol << "' (";
+        cout << "line: " << this->symbolTracer.line << ", at: " << this->symbolTracer.offset << ")" <<endl;
+        cout << currentSymbols << endl;
         cout << this->inputString[this->currentInputStringIdx] << endl;
         return nullptr;
     }
@@ -98,11 +95,11 @@ Token* LexicalAnalyzer::createToken(stack<char> symbolStack, int currentState){
             token->name = "BOOL";
 
         }
-        if (this->isKeyword(token->value)){
+        else if (this->isKeyword(token->value)){
             token->name = "KEYWORD";
 
         }
-        if (this->isVtype(token->value)){
+        else if (this->isVtype(token->value)){
             token->name = "VTYPE";
 
         }
@@ -122,7 +119,25 @@ string LexicalAnalyzer::getTokenValue(stack<char>& symbolStack){
     return tokenValue;
 }
 
+bool LexicalAnalyzer::isSubOp(char currentInputSymbol){
+    if (currentInputSymbol == '-'){
+        int currentInputSymbolIdx = this->currentInputStringIdx - 1;
+        while(currentInputSymbolIdx > 0){
+            if (!isspace(this->inputString[currentInputSymbolIdx])){
 
+                if (isalnum(this->inputString[currentInputSymbolIdx])){
+                    cout << this->inputString[currentInputSymbolIdx] << endl;
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+            currentInputSymbolIdx--;
+        }
+    }
+    return false;
+}
 Token* LexicalAnalyzer::getToken(){
     if (this->currentInputStringIdx >= this->inputString.length()){
         cout << "No more token exists" << endl;
@@ -140,6 +155,13 @@ Token* LexicalAnalyzer::getToken(){
 
     for (; this->currentInputStringIdx < this->inputString.length(); this->currentInputStringIdx++){
         currentInputSymbol = this->inputString[this->currentInputStringIdx];
+        if (isSubOp(currentInputSymbol)){
+            auto* tk = new Token();
+            tk->name = "ARITHMETIC";
+            tk->value = currentInputSymbol;
+            this->currentInputStringIdx++;
+            return tk;
+        }
         this->updateSymbolTracer(currentInputSymbol);
         nextState = this->getNextState(currentState, currentInputSymbol);
         if (nextState == -1){

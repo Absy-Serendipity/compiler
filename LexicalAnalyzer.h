@@ -504,6 +504,7 @@ private:
     string getTokenValue(stack<char>& symbolStack);
     int getNextState(int currentState, char inputSymbol);
     void updateSymbolTracer(char);
+    bool isSubOp(char);
 public:
     LexicalAnalyzer(const string& inputString);
     Token* getToken();

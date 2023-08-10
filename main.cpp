@@ -10,13 +10,24 @@ using namespace std;
 int main() {
     vector<Token*> symbolTable;
 
-    string inputString = "\"asdfsa!";
+    string inputString = "int main() {\n"
+                         "    int x = 10;\n"
+                         "    if (x > 5) {\n"
+                         "        while (x > 0) {\n"
+                         "            x = x - 1;\n"
+                         "        }\n"
+                         "    } else {\n"
+
+                         "    }\n"
+                         "    return 0;\n"
+                         "}";
 
 
     LexicalAnalyzer lexicalAnalyzer(inputString);
 
     Token* token = lexicalAnalyzer.getToken();
     while (token != nullptr){
+
         if (token->name != "WHITESPACE"){
 
             symbolTable.push_back(token);
