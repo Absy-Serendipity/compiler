@@ -3,7 +3,7 @@
 #include <sstream>
 #include <vector>
 #include <string>
-#include "LexicalAnalyzer.h"
+#include "headers/LexicalAnalyzer.h"
 using namespace std;
 
 
@@ -11,7 +11,9 @@ int main() {
     vector<Token*> symbolTable;
 
     string inputString = "int main() {\n"
-                         "    int x = 10;\n"
+                         "    int x = -10;\n"
+                         "    x = -10 - 1;\n"
+                         "string y = \"compiler\""
                          "    if (x > 5) {\n"
                          "        while (x > 0) {\n"
                          "            x = x - 1;\n"
@@ -28,7 +30,7 @@ int main() {
     Token* token = lexicalAnalyzer.getToken();
     while (token != nullptr){
 
-        if (token->name != "WHITESPACE"){
+        if (token->name != "whitespace"){
 
             symbolTable.push_back(token);
 

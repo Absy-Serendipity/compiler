@@ -2,7 +2,7 @@
 // Created by 박영재 on 2023/08/07.
 //
 // rejected, end of inputString, not in the alphabet list
-#include "LexicalAnalyzer.h"
+#include "../headers/LexicalAnalyzer.h"
 
 
 LexicalAnalyzer::LexicalAnalyzer(const string& inputString){
@@ -47,7 +47,7 @@ bool LexicalAnalyzer::isBool(const string& tokenValue){
 }
 
 bool LexicalAnalyzer::isVtype(const string& tokenValue){
-    if (this->vtypeList.find(tokenValue) != this->boolList.end()){
+    if (this->vtypeList.find(tokenValue) != this->vtypeList.end()){
         return true;
     }
     return false;
@@ -90,17 +90,17 @@ Token* LexicalAnalyzer::createToken(stack<char> symbolStack, int currentState){
 
 
 
-    if (token->name == "ID"){
+    if (token->name == "id"){
         if (this->isBool(token->value)){
-            token->name = "BOOL";
+            token->name = "boolstr";
 
         }
         else if (this->isKeyword(token->value)){
-            token->name = "KEYWORD";
+            token->name = "keyword";
 
         }
         else if (this->isVtype(token->value)){
-            token->name = "VTYPE";
+            token->name = "vtype";
 
         }
     }
@@ -141,7 +141,7 @@ bool LexicalAnalyzer::isSubOp(char currentInputSymbol){
 Token* LexicalAnalyzer::getToken(){
     if (this->currentInputStringIdx >= this->inputString.length()){
         cout << "No more token exists" << endl;
-        return nullptr;
+        return new Token{"$", ""};
     }
 
 
@@ -157,7 +157,7 @@ Token* LexicalAnalyzer::getToken(){
         currentInputSymbol = this->inputString[this->currentInputStringIdx];
         if (isSubOp(currentInputSymbol)){
             auto* tk = new Token();
-            tk->name = "ARITHMETIC";
+            tk->name = "arith";
             tk->value = currentInputSymbol;
             this->currentInputStringIdx++;
             return tk;

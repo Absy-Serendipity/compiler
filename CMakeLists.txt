@@ -4,5 +4,9 @@ project(compilerPrj)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(compilerPrj main.cpp
-        LexicalAnalyzer.cpp
-        LexicalAnalyzer.h)
+        sources/LexicalAnalyzer.cpp
+        headers/LexicalAnalyzer.h
+        SyntaxAnalyzer.cpp
+        SyntaxAnalyzer.h
+        Node.cpp
+        Node.h)

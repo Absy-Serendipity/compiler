@@ -486,11 +486,12 @@ private:
 
 
     unordered_map<int, string> finalStateMap = {
-            {1, "ARITHMETIC"}, {2, "ARITHMETIC"}, {3, "NUM"}, {4, "NUM"}, {5, "ARITHMETIC"}, {6, "ARITHMETIC"}, {7, "WHITESPACE"}, {8, "WHITESPACE"}, {9, "WHITESPACE"},
-            {10, "ASSIGN"}, {11, "COMP"}, {13, "COMP"}, {14, "COMP"}, {15, "COMP"}, {16, "COMP"}, {17, "COMP"}, {18, "ID"}, {19, "ID"},
-            {20, "ID"}, {25, "STRING"},
-            {30, "CHAR"}, {31, "NUM"}, {32, "NUM"}, {33, "NUM"}, {34, "SEMI"}, {35, "COMMA"}, {36, "LPAREN"}, {37, "RPAREN"}, {38, "LBRACE"}, {39, "RBRACE"}
+            {1, "arith"}, {2, "arith"}, {3, "num"}, {4, "num"}, {5, "arith"}, {6, "arith"}, {7, "whitespace"}, {8, "whitespace"}, {9, "whitespace"},
+            {10, "assign"}, {11, "comp"}, {13, "comp"}, {14, "comp"}, {15, "comp"}, {16, "comp"}, {17, "comp"}, {18, "id"}, {19, "id"},
+            {20, "id"}, {25, "string"},
+            {30, "character"}, {31, "num"}, {32, "num"}, {33, "num"}, {34, "semi"}, {35, "comma"}, {36, "lparen"}, {37, "rparen"}, {38, "lbrace"}, {39, "rbrace"}
     };
+
 
     unordered_set<string> boolList = {"true", "false"};
     unordered_set<string> keywordList = {"if", "else", "while", "return"};
