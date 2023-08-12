@@ -32,7 +32,7 @@ private:
     stack<Node*> leftSubstring;
     Token* currentToken;
 
-    vector<string> LHSList = {"S", "CODE", "CODE", "CODE", "VDECL", "VDECL", "ASSIGN", "RHS", "RHS", "RHS", "RHS", "EXPR", "EXPR", "TERM", "TERM", "TERM", "FACT", "FACT", "FDECL", "ARG", "ARG", "MOREARGS", "MOREARGS", "BLOCK", "BLOCK", "STMT", "STMT", "STMT", "STMT", "COND", "COND_EXPR", "COND", "ELSE", "ELSE", "RETURN"};
+    vector<string> LHSList = {"S", "CODE", "CODE", "CODE", "VDECL", "VDECL", "ASSIGN", "RHS", "RHS", "RHS", "RHS", "EXPR", "EXPR", "TERM", "TERM", "TERM", "FACT", "FACT", "FDECL", "ARG", "ARG", "MOREARGS", "MOREARGS", "BLOCK", "BLOCK", "STMT", "STMT", "STMT", "STMT", "COND", "COND_EXPR", "COND_EXPR", "ELSE", "ELSE", "RETURN"};
     vector<vector<string>> RHSList = {{"CODE"},
                                       {"VDECL", "CODE"},
                                       {"FDECL", "CODE"},
@@ -151,9 +151,9 @@ private:
     };
 
     string getAction(int currentState, const string& inputToken);
-    bool implementAction(string& action);
-    void goTo(int ruleNumber);
-    void shift();
+    bool implementAction(const string& action);
+    void goTo(int stateNumber);
+    void shift(int stateNumber);
     void reduce(int ruleNumber);
     Token* nextToken();
     vector<string> getRHS(int ruleNumber);

@@ -6,7 +6,7 @@
 
 
 LexicalAnalyzer::LexicalAnalyzer(const string& inputString){
-    this->inputString = inputString;
+    this->inputString = inputString + "$";
     this->symbolTracer.line = 1;
     this->symbolTracer.offset = 0;
 
@@ -33,12 +33,6 @@ bool LexicalAnalyzer::isValidInputString(){
     return validationFlag;
 }
 
-bool LexicalAnalyzer::isKeyword(const string& tokenValue){
-    if (this->keywordList.find(tokenValue) != this->keywordList.end()){
-        return true;
-    }
-    return false;
-}
 bool LexicalAnalyzer::isBool(const string& tokenValue){
     if (this->boolList.find(tokenValue) != this->boolList.end()){
         return true;
@@ -95,8 +89,20 @@ Token* LexicalAnalyzer::createToken(stack<char> symbolStack, int currentState){
             token->name = "boolstr";
 
         }
-        else if (this->isKeyword(token->value)){
-            token->name = "keyword";
+        else if (token->value == "if"){
+            token->name = "if";
+
+        }
+        else if (token->value == "else"){
+            token->name = "else";
+
+        }
+        else if (token->value == "while"){
+            token->name = "while";
+
+        }
+        else if (token->value == "return"){
+            token->name = "return";
 
         }
         else if (this->isVtype(token->value)){
@@ -126,7 +132,7 @@ bool LexicalAnalyzer::isSubOp(char currentInputSymbol){
             if (!isspace(this->inputString[currentInputSymbolIdx])){
 
                 if (isalnum(this->inputString[currentInputSymbolIdx])){
-                    cout << this->inputString[currentInputSymbolIdx] << endl;
+//                    cout << this->inputString[currentInputSymbolIdx] << endl;
                     return true;
                 }
                 else{
@@ -140,8 +146,7 @@ bool LexicalAnalyzer::isSubOp(char currentInputSymbol){
 }
 Token* LexicalAnalyzer::getToken(){
     if (this->currentInputStringIdx >= this->inputString.length()){
-        cout << "No more token exists" << endl;
-        return new Token{"$", ""};
+        return nullptr;
     }
 
 
@@ -157,7 +162,7 @@ Token* LexicalAnalyzer::getToken(){
         currentInputSymbol = this->inputString[this->currentInputStringIdx];
         if (isSubOp(currentInputSymbol)){
             auto* tk = new Token();
-            tk->name = "arith";
+            tk->name = "addsub";
             tk->value = currentInputSymbol;
             this->currentInputStringIdx++;
             return tk;

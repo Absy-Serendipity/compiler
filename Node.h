@@ -18,6 +18,7 @@ public:
     vector<Node*> getChildNodeList();
     string getTokenName();
     string getTokenValue();
+    void printTree(int depth = 0);
 };
 
 

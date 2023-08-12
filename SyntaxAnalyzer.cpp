@@ -5,14 +5,13 @@
 #include "SyntaxAnalyzer.h"
 
 // constructor
-SyntaxAnalyzer::SyntaxAnalyzer(const LexicalAnalyzer& lexicalAnalyzer): lexicalAnalyzer(lexicalAnalyzer){
-    this->currentToken = this->nextToken();
-};
+SyntaxAnalyzer::SyntaxAnalyzer(const LexicalAnalyzer& lexicalAnalyzer): lexicalAnalyzer(lexicalAnalyzer){};
 
 
 
 // getters and subroutines
 string SyntaxAnalyzer::getAction(int currentState, const string& inputToken){
+    cout << currentState << "    " << inputToken << "      " << this->SLRTable[currentState][inputToken] << endl;
     return this->SLRTable[currentState][inputToken];
 }
 Token* SyntaxAnalyzer::nextToken(){
@@ -42,71 +41,85 @@ void SyntaxAnalyzer::goTo(int stateNumber){
     this->stateStack.push(stateNumber);
 }
 
-void SyntaxAnalyzer::shift(){
+void SyntaxAnalyzer::shift(int stateNumber){
     auto* newNode = new Node(this->currentToken);
     this->currentToken = this->nextToken();
     this->leftSubstring.push(newNode);
+    this->stateStack.push(stateNumber);
 }
 
 
 void SyntaxAnalyzer::reduce(int ruleNumber){
+
     string LHS = this->getLHS(ruleNumber);
     vector<string> RHS = this->getRHS(ruleNumber);
-    auto* newToken = new Token();
-    newToken->value = LHS;
-    newToken->name = "";
 
-    auto* newNode = new Node(newToken);
+    cout << ruleNumber << " " << this->getLHS(ruleNumber) << " " << RHS.size() << endl;
+    auto* newNode = new Node(new Token{LHS, ""});
 
-    for (const auto& term: RHS){
+    Node* rightMostTerm;
 
+
+    for (int RHSIdx = (int) RHS.size() - 1; RHSIdx >= 0; RHSIdx--){
+        rightMostTerm = this->leftSubstring.top();
+        if (RHS.at(RHSIdx) == rightMostTerm->getTokenName()){
+            newNode->addChild((rightMostTerm));
+            this->leftSubstring.pop();
+            this->stateStack.pop();
+        }
+        else{
+            cout << "stack unmatched error" << endl;
+        }
     }
+
+    this->leftSubstring.push(newNode);
+    this->implementAction(this->getAction(this->stateStack.top(), newNode->getTokenName()));
 }
 
-bool SyntaxAnalyzer::implementAction(string& action){
-    char firstChar = action.front();
-
-    if (isalpha(firstChar)){
-        int ruleNumber =  stoi(action.substr(1));
-
-        // shift
-        if (firstChar == 's'){
-            this->shift();
-        }
+bool SyntaxAnalyzer::implementAction(const string& action){
+    char actionType = action.front();
+// shift
+    if (actionType == 's'){
+        this->shift(stoi(action.substr(1)));
+    }
         // reduce
-        else if (firstChar == 'r'){
-            this->reduce(ruleNumber);
-        }
+    else if (actionType == 'r'){
+        this->reduce(stoi(action.substr(1)));
+
+    }
         // accept
-        else if (firstChar == 'a'){
-            return true;
-        }
+    else if (actionType == 'a'){
+        return true;
     }
     // goto
-    else if (isdigit(firstChar)){
-        int nextState =  stoi(action);
-        this->goTo(nextState);
+    if (isdigit(actionType)){
+        int stateNumber =  stoi(action);
+        this->goTo(stateNumber);
     }
+
     return false;
 
 }
 
 Node* SyntaxAnalyzer::analyze(){
 
-
     int currentState;
-    bool isAccepted = false;
+    bool accepted = false;
     this->stateStack.push(0);
+    this->currentToken = this->nextToken();
+    string action;
+
+    while (!accepted){
 
 
-    while (true){
-        currentState = stateStack.top();
-        string action = this->getAction(currentState, this->currentToken->value);
-        isAccepted = this->implementAction(action);
-
-        if (isAccepted){
-            return this->syntaxTree;
+        if (this->currentToken->name != "whitespace"){
+            action = this->getAction(stateStack.top(), this->currentToken->name);
+            accepted = this->implementAction(action);
+        }
+        else{
+            this->currentToken = this->nextToken();
         }
     }
-    return nullptr;
+    return this->leftSubstring.top();
+
 }

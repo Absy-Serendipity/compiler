@@ -19,3 +19,20 @@ string Node::getTokenName(){
 string Node::getTokenValue(){
     return this->token->value;
 }
+
+void Node::printTree(int depth) {
+
+    for (int i = 0; i < depth; ++i) {
+        cout << "   ";
+    }
+
+    if (depth > 0) {
+        cout << "├─ ";
+    }
+
+    cout << getTokenName() << " : " << getTokenValue() << endl;
+
+    for (Node* child : childNodeList) {
+        child->printTree(depth + 1);
+    }
+}
