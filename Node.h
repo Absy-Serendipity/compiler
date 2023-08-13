@@ -12,6 +12,13 @@ class Node {
 private:
     Token* token;
     vector<Node*> childNodeList;
+
+
+    void replaceToken(Node* replaced, Node* replacing);
+    void removeEpsilonMove();
+    void removeSingleSuccessor();
+    void removeSyntacticDetails();
+    void swapOperator();
 public:
     Node(Token* token);
     void addChild(Node* childNode);
@@ -19,6 +26,7 @@ public:
     string getTokenName();
     string getTokenValue();
     void printTree(int depth = 0);
+    void abstractTree();
 };
 
 

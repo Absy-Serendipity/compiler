@@ -36,3 +36,95 @@ void Node::printTree(int depth) {
         child->printTree(depth + 1);
     }
 }
+
+void Node::replaceToken(Node* replaced, Node* replacing){
+    delete replaced->token;
+    replaced->token = replacing->token;
+    replaced->childNodeList = replacing->childNodeList;
+}
+
+void Node::removeEpsilonMove(){
+    for (vector<Node*>::iterator i = this->childNodeList.begin(); i != this->childNodeList.end();){
+        if ((*i)->getTokenValue().empty() && (*i)->getChildNodeList().empty()){
+            delete (*i)->token;
+            delete (*i);
+            i = this->childNodeList.erase(i);
+        }
+        else{
+            (*i)->removeEpsilonMove();
+            i++;
+        }
+    }
+}
+void Node::removeSingleSuccessor(){
+
+    if (this->getChildNodeList().size() == 1){
+
+        this->replaceToken(this, this->getChildNodeList().at(0));
+
+        this->removeSingleSuccessor();
+        return;
+    }
+    for (vector<Node*>::iterator i = this->childNodeList.begin(); i != this->childNodeList.end(); i++){
+        (*i)->removeSingleSuccessor();
+    }
+}
+
+void Node::removeSyntacticDetails(){
+    for (vector<Node*>::iterator i = this->childNodeList.begin(); i != this->childNodeList.end();){
+
+        if ((*i)->getTokenName() == "rbrace" || (*i)->getTokenName() == "lbrace" || (*i)->getTokenName() == "rparen"
+        || (*i)->getTokenName() == "lparen" || (*i)->getTokenName() == "semi" || (*i)->getTokenName() == "comma"
+        ){
+
+            delete (*i)->token;
+            delete (*i);
+            i = this->childNodeList.erase(i);
+        }
+
+        else{
+            (*i)->removeSyntacticDetails();
+            i++;
+        }
+    }
+}
+
+void Node::swapOperator(){
+//    if (!childNodeList.empty()){
+//        cout << childNodeList.size() << endl;
+//    }
+//
+//    for (Node* child : childNodeList) {
+//        child->swapOperator();
+//    }
+    cout << this->childNodeList.size() << endl;
+    for (vector<Node*>::iterator i = this->childNodeList.begin(); i != this->childNodeList.end();){
+
+        if ((*i)->getTokenName() == "addsub" || (*i)->getTokenName() == "multidiv" || (*i)->getTokenName() == "comp"){
+
+            delete this->token;
+
+            this->token = (*i)->token;
+
+            i = this->childNodeList.erase(i);
+
+
+        }
+        else{
+            (*i)->swapOperator();
+            i++;
+        }
+
+
+
+    }
+}
+
+void Node::abstractTree() {
+
+    this->removeEpsilonMove();
+    this->removeSyntacticDetails();
+    this->removeSingleSuccessor();
+
+    this->swapOperator();
+}

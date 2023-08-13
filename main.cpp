@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include <vector>
 #include <string>
 #include "headers/LexicalAnalyzer.h"
@@ -12,7 +11,10 @@ using namespace std;
 int main() {
 
 
-    string inputString = "int main(int arg) {\n"
+    string inputString = "int add(int x, int y){"
+                         "  return x + y;"
+                         "}"
+                         "int main(int arg, char arg1) {\n"
                          "    int x = -10;\n"
                          "    x = -10 - 1;\n"
                          "string y = \"compiler\";"
@@ -27,7 +29,7 @@ int main() {
                          "}";
 
 
-    inputString = "int main() {\n"
+    inputString = "int main(int arg1, char arg2) {\n"
 
                          "string y = \"compiler\";"
 
@@ -40,7 +42,7 @@ int main() {
                          "    return 0;\n"
                          "}";
 
-//    inputString = "int x = -10;";
+
     LexicalAnalyzer lexicalAnalyzer(inputString);
     vector<Token*> symbolTable;
 
@@ -50,22 +52,27 @@ int main() {
     Node* syntaxTree = syntaxAnalyzer.analyze();
 
     syntaxTree->printTree();
-
-    Token* token = lexicalAnalyzer.getToken();
-    while (token != nullptr){
-
-        if (token->name != "whitespace"){
-
-            symbolTable.push_back(token);
-
-//            cout << "<" << token->name << ", " << token->value << ">" << endl;
-            cout << token->name << " ";
-        }
+    syntaxTree->abstractTree();
+    cout << "\n\n\n\n\n\n\n\n\n";
+    syntaxTree->printTree();
+    ;
 
 
-
-        token = lexicalAnalyzer.getToken();
-    }
+//    Token* token = lexicalAnalyzer.getToken();
+//    while (token != nullptr){
+//
+//        if (token->name != "whitespace"){
+//
+//            symbolTable.push_back(token);
+//
+////            cout << "<" << token->name << ", " << token->value << ">" << endl;
+//            cout << token->name << " ";
+//        }
+//
+//
+//
+//        token = lexicalAnalyzer.getToken();
+//    }
 
 
 

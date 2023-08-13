@@ -15,14 +15,15 @@
 #include <queue>
 #include <sstream>
 #include "Node.h"
+#include <exception>
 
 using namespace std;
 class SyntaxAnalyzer {
 
 private:
-    //    unordered_set<string> terminalList = {"assign", "comma", "boolstr", "semi", "num", "comp", "string", "else",
-//                                          "character", "lparen", "rbrace", "while", "lbrace", "if", "multdiv", "addsub",
-//                                          "return", "rparen", "id", "vtype"};
+        unordered_set<string> terminalList = {"assign", "comma", "boolstr", "semi", "num", "comp", "string", "else",
+                                          "character", "lparen", "rbrace", "while", "lbrace", "if", "multdiv", "addsub",
+                                          "return", "rparen", "id", "vtype"};
 //    unordered_set<string> nonTerminalList = {"COND", "EXPR", "ARG", "MOREARGS", "STMT", "ASSIGN", "RHS", "COND_EXPR",
 //                                             "TERM", "BLOCK", "CODE", "RETURN", "S", "FACT", "ELSE", "VDECL", "FDECL"};
 
@@ -158,11 +159,26 @@ private:
     Token* nextToken();
     vector<string> getRHS(int ruleNumber);
     string getLHS(int ruleNumber);
-
+    string getExpectedToken(int currentState, const string& inputToken);
 public:
+
+
     SyntaxAnalyzer(const LexicalAnalyzer& lexicalAnalyzer);
     Node* analyze();
 
+
+    class SyntaxErrorException : public exception {
+    private:
+        std::string message;
+
+    public:
+        SyntaxErrorException(const std::string& msg) : message(msg) {}
+
+        const char* what() const noexcept override {
+            return message.c_str();
+        }
+    };
 };
+
 
 #endif //COMPILERPRJ_SYNTAXANALYZER_H

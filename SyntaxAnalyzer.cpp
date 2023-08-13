@@ -8,10 +8,29 @@
 SyntaxAnalyzer::SyntaxAnalyzer(const LexicalAnalyzer& lexicalAnalyzer): lexicalAnalyzer(lexicalAnalyzer){};
 
 
+string SyntaxAnalyzer::getExpectedToken(int currentState, const string& inputToken){
+    string expectedTokenList;
+    for (const auto& entry : this->SLRTable[currentState]) {
+        for (const auto& terminal: this->terminalList){
+            if (entry.first == terminal){
+                expectedTokenList += entry.first + ", ";
+                break;
+            }
+        }
+    }
+    return expectedTokenList;
+}
 
 // getters and subroutines
 string SyntaxAnalyzer::getAction(int currentState, const string& inputToken){
-    cout << currentState << "    " << inputToken << "      " << this->SLRTable[currentState][inputToken] << endl;
+//    cout << currentState << "    " << inputToken << "      '" << this->SLRTable[currentState][inputToken] <<"'"<< endl;
+    if (this->SLRTable[currentState].find(inputToken) == this->SLRTable[currentState].end()){
+
+        string errorMsg = "After " +  this->leftSubstring.top()->getTokenName() + ", expected token(s): " + this->getExpectedToken(currentState, inputToken) + " but input token: " + inputToken;
+        cout << errorMsg << endl;
+        throw SyntaxErrorException(errorMsg);
+    }
+
     return this->SLRTable[currentState][inputToken];
 }
 Token* SyntaxAnalyzer::nextToken(){
@@ -54,7 +73,7 @@ void SyntaxAnalyzer::reduce(int ruleNumber){
     string LHS = this->getLHS(ruleNumber);
     vector<string> RHS = this->getRHS(ruleNumber);
 
-    cout << ruleNumber << " " << this->getLHS(ruleNumber) << " " << RHS.size() << endl;
+//    cout << ruleNumber << " " << this->getLHS(ruleNumber) << " " << RHS.size() << endl;
     auto* newNode = new Node(new Token{LHS, ""});
 
     Node* rightMostTerm;
