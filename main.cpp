@@ -11,53 +11,34 @@ using namespace std;
 int main() {
 
 
-    string inputString = "int add(int x, int y){"
-                         "  return x + y;"
-                         "}"
-                         "int main(int arg, char arg1) {\n"
-                         "    int x = -10;\n"
-                         "    x = -10 - 1;\n"
-                         "string y = \"compiler\";"
-                         "    if (true) {\n"
-                         "        while (false) {\n"
-                         "            x = x + 1;\n"
-                         "        }\n"
-                         "    } else {\n"
-
-                         "    }\n"
-                         "    return 0;\n"
+    string inputString = "int main(int x, string y){"
+                         ""
+                         "return 0;"
                          "}";
 
+//
+//    inputString = "int add(int x, int y){"
+//                  "return x + y;"
+//                  "}"
+//                  "int main(int arg1, char arg2) {\n"
+//
+//                         "string y = \"compiler\";"
+//
+//                         "        while (false) {\n"
+//                         "            x = x + 1;\n"
+//                         "        }\n"
+//
+//
+//
+//                         "    return 0;\n"
+//                         "}";
 
-    inputString = "int main(int arg1, char arg2) {\n"
-
-                         "string y = \"compiler\";"
-
-                         "        while (false) {\n"
-                         "            x = x + 1;\n"
-                         "        }\n"
-
-
-
-                         "    return 0;\n"
-                         "}";
-
+    inputString = "while(x > 0 & x <100){"
+                  "x = x - 1;"
+                  "}";
 
     LexicalAnalyzer lexicalAnalyzer(inputString);
     vector<Token*> symbolTable;
-
-
-    SyntaxAnalyzer syntaxAnalyzer(lexicalAnalyzer);
-
-    Node* syntaxTree = syntaxAnalyzer.analyze();
-
-    syntaxTree->printTree();
-    syntaxTree->abstractTree();
-    cout << "\n\n\n\n\n\n\n\n\n";
-    syntaxTree->printTree();
-    ;
-
-
 //    Token* token = lexicalAnalyzer.getToken();
 //    while (token != nullptr){
 //
@@ -69,10 +50,22 @@ int main() {
 //            cout << token->name << " ";
 //        }
 //
-//
-//
 //        token = lexicalAnalyzer.getToken();
 //    }
+
+    SyntaxAnalyzer syntaxAnalyzer(lexicalAnalyzer);
+//
+    Node* syntaxTree = syntaxAnalyzer.analyze();
+//
+    syntaxTree->printTree();
+    syntaxTree->abstractTree();
+//    cout << "\n\n\n\n\n\n\n\n\n";
+    syntaxTree->printTree();
+
+
+
+
+
 
 
 

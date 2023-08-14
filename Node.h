@@ -19,6 +19,7 @@ private:
     void removeSingleSuccessor();
     void removeSyntacticDetails();
     void swapOperator();
+    void removeIrrelevantToken();
 public:
     Node(Token* token);
     void addChild(Node* childNode);

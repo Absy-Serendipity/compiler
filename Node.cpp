@@ -119,12 +119,28 @@ void Node::swapOperator(){
 
     }
 }
+void Node::removeIrrelevantToken(){
+    for (vector<Node*>::iterator i = this->childNodeList.begin(); i != this->childNodeList.end();){
+
+        if ((*i)->getTokenName() == "return"){
+
+            delete (*i)->token;
+            delete (*i);
+            i = this->childNodeList.erase(i);
+        }
+
+        else{
+            (*i)->removeIrrelevantToken();
+            i++;
+        }
+    }
+}
 
 void Node::abstractTree() {
 
     this->removeEpsilonMove();
     this->removeSyntacticDetails();
     this->removeSingleSuccessor();
-
     this->swapOperator();
+    this->removeIrrelevantToken();
 }
