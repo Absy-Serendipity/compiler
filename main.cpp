@@ -11,8 +11,16 @@ using namespace std;
 int main() {
 
 
-    string inputString = "int main(int x, string y){"
-                         ""
+    string inputString = "int main(){"
+                         "int x = 10;"
+                         "int y =  x + 20;"
+                         "int z = add(x, y);"
+                         "if (z > 100){ z = z - 100; }"
+                         "else{"
+                         "while(z <100 & x == 10){"
+                         "z = z - 1;"
+                         "}"
+                         "}"
                          "return 0;"
                          "}";
 
@@ -24,18 +32,14 @@ int main() {
 //
 //                         "string y = \"compiler\";"
 //
-//                         "        while (false) {\n"
+//                         "        while (x > 0 & x <100 | false) {\n"
 //                         "            x = x + 1;\n"
 //                         "        }\n"
-//
-//
-//
+//                         "x = add(x, y);"
 //                         "    return 0;\n"
 //                         "}";
 
-    inputString = "while(x > 0 & x <100){"
-                  "x = x - 1;"
-                  "}";
+
 
     LexicalAnalyzer lexicalAnalyzer(inputString);
     vector<Token*> symbolTable;
@@ -62,12 +66,43 @@ int main() {
 //    cout << "\n\n\n\n\n\n\n\n\n";
     syntaxTree->printTree();
 
-
-
-
-
-
-
-
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
