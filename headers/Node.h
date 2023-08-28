@@ -6,7 +6,8 @@
 #define COMPILERPRJ_NODE_H
 
 
-#include "headers/LexicalAnalyzer.h"
+#include "LexicalAnalyzer.h"
+#include "queue"
 
 class Node {
 private:
@@ -20,12 +21,16 @@ private:
     void removeSyntacticDetails();
     void swapOperator();
     void removeIrrelevantToken();
+    void removeVDECLASSIGN();
+
 public:
     Node(Token* token);
     void addChild(Node* childNode);
-    vector<Node*> getChildNodeList();
+    vector<Node*>& getChildNodeList();
     string getTokenName();
     string getTokenValue();
+    Token* getToken();
+
     void printTree(int depth = 0);
     void abstractTree();
 };

@@ -2,15 +2,17 @@
 // Created by 박영재 on 2023/08/11.
 //
 
-#include "Node.h"
+#include "../headers/Node.h"
 
 Node::Node(Token* token){
 this->token = token;
 }
 void Node::addChild(Node* childNode){
+
+//    this->childNodeList.insert(this->childNodeList.begin(), childNode);
     this->childNodeList.push_back(childNode);
 }
-vector<Node*> Node::getChildNodeList(){
+vector<Node*>& Node::getChildNodeList(){
     return this->childNodeList;
 }
 string Node::getTokenName(){
@@ -19,7 +21,9 @@ string Node::getTokenName(){
 string Node::getTokenValue(){
     return this->token->value;
 }
-
+Token* Node::getToken(){
+    return this->token;
+}
 void Node::printTree(int depth) {
 
     for (int i = 0; i < depth; ++i) {
@@ -58,20 +62,20 @@ void Node::removeEpsilonMove(){
 }
 void Node::removeSingleSuccessor(){
 
-    if (this->getChildNodeList().size() == 1){
+    if (this->getChildNodeList().size() == 1 && this->getTokenName() != "BLOCK"){
 
         this->replaceToken(this, this->getChildNodeList().at(0));
 
         this->removeSingleSuccessor();
         return;
     }
-    for (vector<Node*>::iterator i = this->childNodeList.begin(); i != this->childNodeList.end(); i++){
+    for (auto i = this->childNodeList.begin(); i != this->childNodeList.end(); i++){
         (*i)->removeSingleSuccessor();
     }
 }
 
 void Node::removeSyntacticDetails(){
-    for (vector<Node*>::iterator i = this->childNodeList.begin(); i != this->childNodeList.end();){
+    for (auto i = this->childNodeList.begin(); i != this->childNodeList.end();){
 
         if ((*i)->getTokenName() == "rbrace" || (*i)->getTokenName() == "lbrace" || (*i)->getTokenName() == "rparen"
         || (*i)->getTokenName() == "lparen" || (*i)->getTokenName() == "semi" || (*i)->getTokenName() == "comma"
@@ -120,14 +124,16 @@ void Node::swapOperator(){
     }
 }
 void Node::removeIrrelevantToken(){
-    for (vector<Node*>::iterator i = this->childNodeList.begin(); i != this->childNodeList.end();){
-
-        if ((*i)->getTokenName() == "return"){
+    string currentTokenName;
+    for (auto i = this->childNodeList.begin(); i != this->childNodeList.end();){
+        currentTokenName = (*i)->getTokenName();
+        if (currentTokenName == "return"){
 
             delete (*i)->token;
             delete (*i);
             i = this->childNodeList.erase(i);
         }
+
 
         else{
             (*i)->removeIrrelevantToken();
@@ -135,7 +141,40 @@ void Node::removeIrrelevantToken(){
         }
     }
 }
+void Node::removeVDECLASSIGN(){
+    queue<Node*> queue;
+    queue.push(this);
 
+    Node* currentNode;
+    Node* lastChildNode;
+
+    while(!queue.empty()){
+        currentNode = queue.front();
+
+        if (currentNode->getTokenName() == "VDECL"){
+
+            lastChildNode = *(currentNode->getChildNodeList().end() - 1);
+
+            if (lastChildNode->getTokenName() == "ASSIGN"){
+                currentNode->getChildNodeList().pop_back();
+                for (auto childNode: lastChildNode->getChildNodeList()){
+                    if (childNode->getTokenName() != "assign"){
+                        currentNode->addChild(childNode);
+                    }
+                }
+                delete lastChildNode;
+            }
+        }
+        else{
+            for (auto childNode: currentNode->getChildNodeList()){
+                queue.push(childNode);
+            }
+        }
+
+
+        queue.pop();
+    }
+}
 void Node::abstractTree() {
 
     this->removeEpsilonMove();
@@ -143,4 +182,5 @@ void Node::abstractTree() {
     this->removeSingleSuccessor();
     this->swapOperator();
     this->removeIrrelevantToken();
+    this->removeVDECLASSIGN();
 }

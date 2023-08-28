@@ -2,9 +2,10 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include "headers/LexicalAnalyzer.h"
-#include "SyntaxAnalyzer.h"
-#include "Node.h"
+#include "../headers/LexicalAnalyzer.h"
+#include "../headers/SyntaxAnalyzer.h"
+#include "../headers/Node.h"
+#include "../SemanticAnalyzer.h"
 using namespace std;
 
 
@@ -13,36 +14,34 @@ int main() {
 
     string inputString = "int main(){"
                          "int x = 10;"
-                         "int y =  x + 20;"
-                         "int z = add(x, y);"
+                         "string y = \"compiler\";"
+                         "int z = add(x, 10);"
+                         "char a = '1';"
                          "if (z > 100){ z = z - 100; }"
-                         "else{"
-                         "while(z <100 & x == 10){"
-                         "z = z - 1;"
-                         "}"
-                         "}"
+
                          "return 0;"
                          "}";
 
 //
-//    inputString = "int add(int x, int y){"
-//                  "return x + y;"
-//                  "}"
-//                  "int main(int arg1, char arg2) {\n"
-//
-//                         "string y = \"compiler\";"
-//
-//                         "        while (x > 0 & x <100 | false) {\n"
-//                         "            x = x + 1;\n"
-//                         "        }\n"
-//                         "x = add(x, y);"
-//                         "    return 0;\n"
-//                         "}";
+    inputString = "int add(int x, int y, int z){"
+                  "return x + y;"
+                  "}"
+                  "int main() {\n"
+
+                         "string y = \"compiler\";"
+                         "int x = 0;"
+                         "        while (x > 0 & x <100 | false) {\n"
+                         "            x = x + 1;\n"
+                         "        }\n"
+                         "x = add(x, y);"
+                         "    return 0;\n"
+                         "}";
 
 
 
     LexicalAnalyzer lexicalAnalyzer(inputString);
-    vector<Token*> symbolTable;
+
+//    vector<Token*> symbolTable;
 //    Token* token = lexicalAnalyzer.getToken();
 //    while (token != nullptr){
 //
@@ -61,10 +60,13 @@ int main() {
 //
     Node* syntaxTree = syntaxAnalyzer.analyze();
 //
-    syntaxTree->printTree();
+//    syntaxTree->printTree();
     syntaxTree->abstractTree();
 //    cout << "\n\n\n\n\n\n\n\n\n";
     syntaxTree->printTree();
+
+    SemanticAnalyzer semanticAnalyzer(syntaxTree);
+    semanticAnalyzer.checkScope();
 
     return 0;
 }

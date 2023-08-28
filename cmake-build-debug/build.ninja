@@ -49,11 +49,11 @@ cmake_ninja_workdir = /Users/genius-park/Desktop/compilerPrj/cmake-build-debug/
 
 build cmake_object_order_depends_target_compilerPrj: phony || CMakeFiles/compilerPrj.dir
 
-build CMakeFiles/compilerPrj.dir/main.cpp.o: CXX_COMPILER__compilerPrj_unscanned_Debug /Users/genius-park/Desktop/compilerPrj/main.cpp || cmake_object_order_depends_target_compilerPrj
-  DEP_FILE = CMakeFiles/compilerPrj.dir/main.cpp.o.d
+build CMakeFiles/compilerPrj.dir/sources/main.cpp.o: CXX_COMPILER__compilerPrj_unscanned_Debug /Users/genius-park/Desktop/compilerPrj/sources/main.cpp || cmake_object_order_depends_target_compilerPrj
+  DEP_FILE = CMakeFiles/compilerPrj.dir/sources/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/compilerPrj.dir
-  OBJECT_FILE_DIR = CMakeFiles/compilerPrj.dir
+  OBJECT_FILE_DIR = CMakeFiles/compilerPrj.dir/sources
 
 build CMakeFiles/compilerPrj.dir/sources/LexicalAnalyzer.cpp.o: CXX_COMPILER__compilerPrj_unscanned_Debug /Users/genius-park/Desktop/compilerPrj/sources/LexicalAnalyzer.cpp || cmake_object_order_depends_target_compilerPrj
   DEP_FILE = CMakeFiles/compilerPrj.dir/sources/LexicalAnalyzer.cpp.o.d
@@ -67,8 +67,14 @@ build CMakeFiles/compilerPrj.dir/SyntaxAnalyzer.cpp.o: CXX_COMPILER__compilerPrj
   OBJECT_DIR = CMakeFiles/compilerPrj.dir
   OBJECT_FILE_DIR = CMakeFiles/compilerPrj.dir
 
-build CMakeFiles/compilerPrj.dir/Node.cpp.o: CXX_COMPILER__compilerPrj_unscanned_Debug /Users/genius-park/Desktop/compilerPrj/Node.cpp || cmake_object_order_depends_target_compilerPrj
-  DEP_FILE = CMakeFiles/compilerPrj.dir/Node.cpp.o.d
+build CMakeFiles/compilerPrj.dir/sources/Node.cpp.o: CXX_COMPILER__compilerPrj_unscanned_Debug /Users/genius-park/Desktop/compilerPrj/sources/Node.cpp || cmake_object_order_depends_target_compilerPrj
+  DEP_FILE = CMakeFiles/compilerPrj.dir/sources/Node.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/compilerPrj.dir
+  OBJECT_FILE_DIR = CMakeFiles/compilerPrj.dir/sources
+
+build CMakeFiles/compilerPrj.dir/SemanticAnalyzer.cpp.o: CXX_COMPILER__compilerPrj_unscanned_Debug /Users/genius-park/Desktop/compilerPrj/SemanticAnalyzer.cpp || cmake_object_order_depends_target_compilerPrj
+  DEP_FILE = CMakeFiles/compilerPrj.dir/SemanticAnalyzer.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/compilerPrj.dir
   OBJECT_FILE_DIR = CMakeFiles/compilerPrj.dir
@@ -81,7 +87,7 @@ build CMakeFiles/compilerPrj.dir/Node.cpp.o: CXX_COMPILER__compilerPrj_unscanned
 #############################################
 # Link the executable compilerPrj
 
-build compilerPrj: CXX_EXECUTABLE_LINKER__compilerPrj_Debug CMakeFiles/compilerPrj.dir/main.cpp.o CMakeFiles/compilerPrj.dir/sources/LexicalAnalyzer.cpp.o CMakeFiles/compilerPrj.dir/SyntaxAnalyzer.cpp.o CMakeFiles/compilerPrj.dir/Node.cpp.o
+build compilerPrj: CXX_EXECUTABLE_LINKER__compilerPrj_Debug CMakeFiles/compilerPrj.dir/sources/main.cpp.o CMakeFiles/compilerPrj.dir/sources/LexicalAnalyzer.cpp.o CMakeFiles/compilerPrj.dir/SyntaxAnalyzer.cpp.o CMakeFiles/compilerPrj.dir/sources/Node.cpp.o CMakeFiles/compilerPrj.dir/SemanticAnalyzer.cpp.o
   FLAGS = -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/compilerPrj.dir
   POST_BUILD = :

@@ -2,7 +2,7 @@
 // Created by 박영재 on 2023/08/10.
 //
 
-#include "SyntaxAnalyzer.h"
+#include "headers/SyntaxAnalyzer.h"
 
 // constructor
 SyntaxAnalyzer::SyntaxAnalyzer(const LexicalAnalyzer& lexicalAnalyzer): lexicalAnalyzer(lexicalAnalyzer){};
@@ -79,6 +79,7 @@ void SyntaxAnalyzer::reduce(int ruleNumber){
     Node* rightMostTerm;
 
 
+
     for (int RHSIdx = (int) RHS.size() - 1; RHSIdx >= 0; RHSIdx--){
         rightMostTerm = this->leftSubstring.top();
         if (RHS.at(RHSIdx) == rightMostTerm->getTokenName()){
@@ -90,6 +91,8 @@ void SyntaxAnalyzer::reduce(int ruleNumber){
             cout << "stack unmatched error" << endl;
         }
     }
+    reverse(newNode->getChildNodeList().begin(), newNode->getChildNodeList().end());
+
 
     this->leftSubstring.push(newNode);
     this->implementAction(this->getAction(this->stateStack.top(), newNode->getTokenName()));
