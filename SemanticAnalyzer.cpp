@@ -25,12 +25,15 @@ void SemanticAnalyzer::checkScope(){
         currentChildNodeList = currentNode->getChildNodeList();
         auto iter = currentChildNodeList.begin();
 
-        if (currentTokenName == "BLOCK"){
+        if (currentTokenName == "FDECL" || currentTokenName == "while" || currentTokenName == "if" || currentTokenName == "else"){
             auto newSymbolTable = new symbolTable(this->currentSymbolTable);
             this->currentSymbolTable = newSymbolTable;
         }
-        else if (currentTokenName == "FDECL" || currentTokenName == "VDECL" || currentTokenName == "ARG" || currentTokenName == "MOREARGS"){
-            this->currentSymbolTable->addSymbol(currentChildNodeList.at(1)->getTokenValue(), currentChildNodeList.at(0)->getTokenValue());
+        if (currentTokenName == "FDECL" || currentTokenName == "VDECL" || currentTokenName == "ARG" || currentTokenName == "MOREARGS"){
+            string id = currentChildNodeList.at(1)->getTokenValue();
+            string type = currentChildNodeList.at(0)->getTokenValue();
+            this->currentSymbolTable->addSymbol(id, type);
+            cout << id << " " << type << endl;
             iter = iter + 2;
         }
         else if (currentTokenName == "id"){

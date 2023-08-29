@@ -28,16 +28,14 @@ private:
             return this->link;
         }
         void addSymbol(const string& id, const string& type){
-            if (verifyId(id)){
+            if ((this->table).find(id) == (this->table).end()){
                 (this->table)[id] = type;
             }
             else{
-                cout << "id is already declared" << endl;
+                cout << "\""<< id << "\" is already declared" << "\n\n";
             }
         }
-//        void setNextLink(symbolTable* nextLink){
-//            this->link = nextLink;
-//        }
+
 
         unordered_map<string, string>& getTable(){
             return this->table;

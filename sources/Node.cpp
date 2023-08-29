@@ -231,13 +231,7 @@ void Node::removeBLOCK(){
                                             blockNode->getChildNodeList().begin(),
                                             blockNode->getChildNodeList().end());
 
-
-
-
                 delete blockNode;
-
-
-
 
             }
             else{

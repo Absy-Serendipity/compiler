@@ -65,8 +65,8 @@ int main() {
 //    cout << "\n\n\n\n\n\n\n\n\n";
     syntaxTree->printTree();
 
-//    SemanticAnalyzer semanticAnalyzer(syntaxTree);
-//    semanticAnalyzer.checkScope();
+    SemanticAnalyzer semanticAnalyzer(syntaxTree);
+    semanticAnalyzer.checkScope();
 
     return 0;
 }
