@@ -23,7 +23,7 @@ string SyntaxAnalyzer::getExpectedToken(int currentState, const string& inputTok
 
 // getters and subroutines
 string SyntaxAnalyzer::getAction(int currentState, const string& inputToken){
-    cout << currentState << "    " << inputToken << "      '" << this->SLRTable[currentState][inputToken] <<"'"<< endl;
+//    cout << currentState << "    " << inputToken << "      '" << this->SLRTable[currentState][inputToken] <<"'"<< endl;
     if (this->SLRTable[currentState].find(inputToken) == this->SLRTable[currentState].end()){
 
         string errorMsg = "After " +  this->leftSubstring.top()->getTokenName() + ", expected token(s): " + this->getExpectedToken(currentState, inputToken) + " but input token: " + inputToken;

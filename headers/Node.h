@@ -22,7 +22,8 @@ private:
     void swapOperator();
     void removeIrrelevantToken();
     void removeVDECLASSIGN();
-
+    void replaceSTMT();
+    void removeBLOCK();
 public:
     Node(Token* token);
     void addChild(Node* childNode);

@@ -62,7 +62,7 @@ void Node::removeEpsilonMove(){
 }
 void Node::removeSingleSuccessor(){
 
-    if (this->getChildNodeList().size() == 1 && this->getTokenName() != "BLOCK"){
+    if (this->getChildNodeList().size() == 1){
 
         this->replaceToken(this, this->getChildNodeList().at(0));
 
@@ -101,8 +101,8 @@ void Node::swapOperator(){
 //    for (Node* child : childNodeList) {
 //        child->swapOperator();
 //    }
-    cout << this->childNodeList.size() << endl;
-    for (vector<Node*>::iterator i = this->childNodeList.begin(); i != this->childNodeList.end();){
+
+    for (auto i = this->childNodeList.begin(); i != this->childNodeList.end();){
 
         if ((*i)->getTokenName() == "addsub" || (*i)->getTokenName() == "multidiv" || (*i)->getTokenName() == "comp"){
 
@@ -150,7 +150,7 @@ void Node::removeVDECLASSIGN(){
 
     while(!queue.empty()){
         currentNode = queue.front();
-
+        queue.pop();
         if (currentNode->getTokenName() == "VDECL"){
 
             lastChildNode = *(currentNode->getChildNodeList().end() - 1);
@@ -172,9 +172,87 @@ void Node::removeVDECLASSIGN(){
         }
 
 
-        queue.pop();
+
     }
 }
+
+void Node::replaceSTMT(){
+    queue<Node*> queue;
+    queue.push(this);
+
+    Node* currentNode;
+    while (!queue.empty()){
+        currentNode = queue.front();
+        queue.pop();
+        vector<Node*>& currentChildNodeList = currentNode->getChildNodeList();
+
+        if (currentNode->getTokenName() == "STMT"){
+
+            delete currentNode->token;
+            currentNode->token = currentChildNodeList.at(0)->getToken();
+            currentChildNodeList.erase(currentChildNodeList.begin());
+        }
+
+        for (auto childNode: currentChildNodeList){
+            queue.push(childNode);
+        }
+
+    }
+
+
+}
+void Node::removeBLOCK(){
+    queue<Node*> queue;
+    queue.push(this);
+
+    Node* currentNode;
+
+
+    while(!queue.empty()){
+
+        currentNode = queue.front();
+        vector<Node*>& currentChildNodeList = currentNode->getChildNodeList();
+
+        queue.pop();
+
+        auto currentIter =  currentChildNodeList.begin();
+
+        while (currentIter != currentChildNodeList.end()){
+
+            if ((*currentIter)->getTokenName() == "BLOCK"){
+                Node* blockNode = (*currentIter);
+
+
+                currentIter = currentChildNodeList.erase(currentIter);
+
+
+
+                currentIter = currentChildNodeList.insert(currentIter,
+                                            blockNode->getChildNodeList().begin(),
+                                            blockNode->getChildNodeList().end());
+
+
+
+
+                delete blockNode;
+
+
+
+
+            }
+            else{
+                queue.push(*currentIter);
+                currentIter++;
+            }
+
+
+        }
+
+    }
+
+}
+
+
 void Node::abstractTree() {
 
     this->removeEpsilonMove();
@@ -183,4 +261,6 @@ void Node::abstractTree() {
     this->swapOperator();
     this->removeIrrelevantToken();
     this->removeVDECLASSIGN();
+    this->replaceSTMT();
+    this->removeBLOCK();
 }
