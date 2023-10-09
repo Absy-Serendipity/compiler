@@ -1,32 +1,32 @@
 <a name="br1"></a> 
 
-**Compiler for Simplified**
+Co mpiler for
 
-**C language**
+Simplifie d C language
 
 
 
 <a name="br2"></a> 
 
-**1.Regular Expression**
+1\.Regu lar Expre ssio n
 
-**(Lexical Analyzer)**
+( L exical Analyze r)
 
 
 
 <a name="br3"></a> 
 
-Sub regular expressions
+Sub regu lar expre ssio ns
 
-• digit : 0|1|2|3|4|5|6|7|8|9
+• dig it  : 0|1|2|3|4|5|6|7|8|9
 
-• digit\_ : 1|2|3|4|5|6|7|8|9
+• dig it\_  : 1|2|3|4|5|6|7|8|9
 
-• Letter :
+• Lette r :
 
-a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|
+~~a|b|c|d|~~e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|
 
-Y|Z
+V|W|X|Y|Z
 
 
 
@@ -36,7 +36,7 @@ Y|Z
 
 • alphabet: [a, b, c, h, i, l, n, o, r, s, t]
 
-• regular expression: int|char|bool|string
+• regu lar expression: int|char|bool|string
 
 i
 
@@ -52,8 +52,6 @@ t
 
 3
 
-9
-
 4
 
 5
@@ -64,11 +62,9 @@ t
 
 8
 
-3
-
-7
-
 2
+
+37
 
 c
 
@@ -86,6 +82,8 @@ o
 
 a
 
+o
+
 ε
 
 ε
@@ -94,93 +92,57 @@ r
 
 l
 
-1
-
-0
-
-1
-
-1
-
-1
-
-2
-
-1
-
-3
-
-1
-
-4
-
-1
-
-5
-
-1
-
-6
-
 ε
 
-3
+9
 
-8
+10
+
+18
+
+11
+
+19
+
+12
+
+20
+
+13
+
+21
+
+14
+
+22
+
+15
+
+23
+
+16
+
+24
 
 1
+
+38
 
 b
 
-o
-
-1
-
-7
-
-1
-
-8
-
-1
-
-9
-
-2
-
-0
-
-2
-
-1
-
-2
-
-2
-
-2
-
-3
-
-2
-
-4
-
 ε
 
 ε
 
-3
+17
 
 0
 
-9
+39
 
 s
 
-ε
-
-t
+ε t
 
 ε
 
@@ -190,49 +152,27 @@ r
 
 i
 
-ε
+ε n
 
-n
+25
 
-2
+26
 
-5
+27
 
-2
+28
 
-6
+29
 
-2
+30
 
-7
+31
 
-2
+32
 
-8
+33
 
-2
-
-9
-
-3
-
-0
-
-3
-
-1
-
-3
-
-2
-
-3
-
-3
-
-3
-
-4
+34
 
 ε
 
@@ -240,23 +180,19 @@ n
 
 g
 
-3
+35
 
-3
-
-6
-
-5
+36
 
 
 
 <a name="br5"></a> 
 
-~~boolstr~~
+~~bo olstr~~
 
 • alphabet: [a, e, f, l, r, s, t, u]
 
-• regular expression: true|false
+• regu lar expression: true|false
 
 e
 
@@ -288,11 +224,9 @@ e
 
 8
 
-1
-
-9
-
 0
+
+19
 
 w
 
@@ -312,43 +246,25 @@ l
 
 e
 
-1
-
-0
-
-1
-
-1
-
-1
-
-2
-
-1
-
-3
-
-1
-
-4
-
-1
-
-5
-
-1
-
-6
-
-1
-
-7
-
-1
-
-8
-
 9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
 
 
 
@@ -358,7 +274,7 @@ e
 
 • alphabet: [f, i]
 
-• regular expression: if
+• regu lar expression: if
 
 i
 
@@ -382,7 +298,7 @@ f
 
 • alphabet: [e, l, s]
 
-• regular expression: else
+• regu lar expression: else
 
 e
 
@@ -422,7 +338,7 @@ e
 
 • alphabet: [e, h, i, l, w]
 
-• regular expression: while
+• regu lar expression: while
 
 w
 
@@ -466,11 +382,11 @@ e
 
 <a name="br9"></a> 
 
-~~return~~
+~~retur n~~
 
 • alphabet: [e, n, r, t, u]
 
-• regular expression: return
+• regu lar expression: return
 
 r
 
@@ -514,13 +430,9 @@ r
 
 n
 
-1
+10
 
-0
-
-1
-
-1
+11
 
 
 
@@ -530,7 +442,7 @@ n
 
 • alphabet: [-, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ε]
 
-• regular expression: 0|(ε|-)(digit\_)(digit)\*
+• regu lar expression: 0|(ε|-)(dig it\_)(dig it)\*
 
 • NFA
 
@@ -552,13 +464,11 @@ n
 
 ε
 
-1
-
-5
-
 ε
 
-digit\_
+dig it\_
+
+ε
 
 ε
 
@@ -568,15 +478,15 @@ digit\_
 
 7
 
+15
+
 ε
-
-1
-
-0
 
 8
 
 9
+
+10
 
 \-
 
@@ -590,27 +500,17 @@ digit\_
 
 ε
 
-ε
-
-digit
+dig it
 
 ε
 
-1
+11
 
-1
+12
 
-1
+13
 
-2
-
-1
-
-3
-
-1
-
-4
+14
 
 ε
 
@@ -626,9 +526,9 @@ digit
 
 ε-closure(δ(T0, digit\_)) = {10, 11, 14, 15} = T2
 
-ε-closure(δ(T0, -)) = {7, 8, 9} = T3
+ε-closure(δ(T0, -)) = { 7, 8, 9} = T3
 
-ε-closure(δ(T0, digit)) = ∅
+ε-closure(δ(T0, dig it)) = ∅
 
 ε-closure(δ(T1, 0)) = ∅
 
@@ -636,7 +536,7 @@ digit
 
 ε-closure(δ(T1, -)) = ∅
 
-ε-closure(δ(T1, digit)) = ∅
+ε-closure(δ(T1, dig it)) = ∅
 
 ε-closure(δ(T2, 0)) = ∅
 
@@ -644,7 +544,7 @@ digit
 
 ε-closure(δ(T2, -)) = ∅
 
-ε-closure(δ(T2, digit)) = {12, 13, 14 ,15} = T4
+ε-closure(δ(T2, dig it)) = {12, 13, 14 ,15} = T4
 
 
 
@@ -658,7 +558,7 @@ digit
 
 ε-closure(δ(T3, -)) = ∅
 
-ε-closure(δ(T3, digit)) = ∅
+ε-closure(δ(T3, dig it)) = ∅
 
 ε-closure(δ(T4, 0)) = ∅
 
@@ -666,7 +566,7 @@ digit
 
 ε-closure(δ(T4, -)) = ∅
 
-ε-closure(δ(T4, digit)) = T4
+ε-closure(δ(T4, dig it)) = T4
 
 
 
@@ -676,59 +576,47 @@ digit
 
 • DFA
 
-T
-
-1
+T1
 
 0
 
-digit
+dig it
 
-digit\_
+dig it\_
 
-digit
+dig it
 
-T
+T2
 
-2
+T4
 
-T
-
-4
-
-T
-
-0
+T0
 
 \-
 
-digit\_
+dig it\_
 
-T
-
-3
+T3
 
 
 
 <a name="br14"></a> 
 
-~~character~~
+~~characte r~~
 
-• alphabet: [ε, , ‘, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y,
+• alphabet: [ε, , ‘, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V,
 
-Z, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+W,X,Y,Z,a,b,c,d,e,f,g,h,i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
 
-• regular expression: 'letter| |ε|digit’
+• regu lar expression: 'lette r| |ε|dig it’
 
 • NFA
 
-letter
+lette r
 
 5
 
 7
-
-9
 
 6
 
@@ -742,31 +630,31 @@ letter
 
 ε
 
-1
-
-3
-
 4
 
-digit
+13
+
+dig it
 
 ε
 
 ε
 
-1
-
-4
+14
 
 3
 
 ε
 
-1
-
-0
+ε
 
 ε
+
+9
+
+10
+
+12
 
 ε
 
@@ -776,21 +664,13 @@ digit
 
 '
 
-ε
-
-1
-
-5
-
-1
-
-6
-
-1
-
-7
-
 '
+
+15
+
+16
+
+17
 
 2
 
@@ -802,21 +682,15 @@ digit
 
 ε
 
-1
-
-1
-
-1
-
-2
-
 ε
+
+11
 
 
 
 <a name="br15"></a> 
 
-~~character~~
+~~characte r~~
 
 ε-closure(0) = {0} = T0
 
@@ -824,7 +698,7 @@ digit
 
 ε-closure(δ(T0, letter)) = ∅
 
-ε-closure(δ(T0, digit)) = ∅
+ε-closure(δ(T0, dig it)) = ∅
 
 ε-closure(δ(T0, )) = ∅
 
@@ -832,7 +706,7 @@ digit
 
 ε-closure(δ(T1, letter)) = {6, 13, 14, 15, 16, 17} = T3
 
-ε-closure(δ(T1, digit)) = {8, 13, 14, 15, 16, 17} = T4
+ε-closure(δ(T1, dig it)) = {8, 13, 14, 15, 16, 17} = T4
 
 ε-closure(δ(T1, )) = {10, 14, 15, 16, 17} = T5
 
@@ -840,7 +714,7 @@ digit
 
 ε-closure(δ(T2, letter)) = ∅
 
-ε-closure(δ(T2, digit)) = ∅
+ε-closure(δ(T2, dig it)) = ∅
 
 ε-closure(δ(T2, )) = ∅
 
@@ -848,13 +722,13 @@ digit
 
 <a name="br16"></a> 
 
-~~character~~
+~~characte r~~
 
 ε-closure(δ(T3, ')) = {17} = T2
 
 ε-closure(δ(T3, letter)) = ∅
 
-ε-closure(δ(T3, digit)) = ∅
+ε-closure(δ(T3, dig it)) = ∅
 
 ε-closure(δ(T3, )) = ∅
 
@@ -862,7 +736,7 @@ digit
 
 ε-closure(δ(T4, letter)) = ∅
 
-ε-closure(δ(T4, digit)) = ∅
+ε-closure(δ(T4, dig it)) = ∅
 
 ε-closure(δ(T4, )) = ∅
 
@@ -870,7 +744,7 @@ digit
 
 ε-closure(δ(T5, letter)) = ∅
 
-ε-closure(δ(T5, digit)) = ∅
+ε-closure(δ(T5, dig it)) = ∅
 
 ε-closure(δ(T5, )) = ∅
 
@@ -878,55 +752,45 @@ digit
 
 <a name="br17"></a> 
 
-~~character~~
+~~characte r~~
 
 • DFA
 
 '
 
-T
+T3
 
-3
+lette r
 
-letter
-
-T
-
-T
-
-0
-
-T
-
-1
-
-T
-
-2
+dig it
 
 '
 
 '
 
-digit 4
+T4
 
-T
+T5
 
-5
+T0
+
+T1
+
+T2
 
 
 
 <a name="br18"></a> 
 
-~~string~~
+~~str ing~~
 
-• alphabet: [ , ", 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, a,
+• alphabet: [ , ", 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X,
 
-b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+Y, Z, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
 
-• regular expression: "(letter| |digit)\*"
+• regu lar expression: "(lette r| |dig it)\*"
 
-letter
+lette r
 
 5
 
@@ -946,13 +810,11 @@ letter
 
 ε
 
-1
-
-1
-
 4
 
-digit
+11
+
+dig it
 
 ε
 
@@ -965,19 +827,19 @@ digit
 ε
 
 ε
-
-1 " 1
-
-1
-
-2
-
-1
-
-3
 
 "
 
+"
+
+12
+
+13
+
+14
+
+15
+
 0
 
 1
@@ -986,23 +848,17 @@ digit
 
 3
 
-4
-
-5
-
-1
-
-0
-
 ε
 
 ε
+
+10
 
 
 
 <a name="br19"></a> 
 
-~~string~~
+~~str ing~~
 
 ε-closure(0) = {0} = T0
 
@@ -1010,7 +866,7 @@ digit
 
 ε-closure(δ(T1, letter)) = {3, 4, 5, 6, 7, 9, 11, 12} = T2
 
-ε-closure(δ(T1, digit)) = {3, 4, 5, 7, 8, 9, 11, 12} = T3
+ε-closure(δ(T1, dig it)) = {3, 4, 5, 7, 8, 9, 11, 12} = T3
 
 ε-closure(δ(T1, )) = {3, 4, 5, 7, 9, 10, 12} = T4
 
@@ -1018,7 +874,7 @@ digit
 
 ε-closure(δ(T2, letter)) = {3, 4, 5, 6, 7, 9, 11, 12} = T2
 
-ε-closure(δ(T2, digit)) = {3, 4, 5, 7, 8, 9, 11, 12} = T3
+ε-closure(δ(T2, dig it)) = {3, 4, 5, 7, 8, 9, 11, 12} = T3
 
 ε-closure(δ(T2, )) = {3, 4, 5, 7, 9, 10, 12} = T4
 
@@ -1028,11 +884,11 @@ digit
 
 <a name="br20"></a> 
 
-~~string~~
+~~str ing~~
 
 ε-closure(δ(T3, letter)) = {3, 4, 5, 6, 7, 9, 11, 12} = T2
 
-ε-closure(δ(T3, digit)) = {3, 4, 5, 7, 8, 9, 11, 12} = T3
+ε-closure(δ(T3, dig it)) = {3, 4, 5, 7, 8, 9, 11, 12} = T3
 
 ε-closure(δ(T3, )) = {3, 4, 5, 7, 9, 10, 12} = T4
 
@@ -1040,7 +896,7 @@ digit
 
 ε-closure(δ(T4, letter)) = {3, 4, 5, 6, 7, 9, 11, 12} = T2
 
-ε-closure(δ(T4, digit)) = {3, 4, 5, 7, 8, 9, 11, 12} = T3
+ε-closure(δ(T4, dig it)) = {3, 4, 5, 7, 8, 9, 11, 12} = T3
 
 ε-closure(δ(T4, )) = {3, 4, 5, 7, 9, 10, 12} = T4
 
@@ -1048,7 +904,7 @@ digit
 
 ε-closure(δ(T5, letter)) = {3, 4, 5, 6, 7, 9, 11, 12} = ∅
 
-ε-closure(δ(T5, digit)) = {3, 4, 5, 7, 8, 9, 11, 12} = ∅
+ε-closure(δ(T5, dig it)) = {3, 4, 5, 7, 8, 9, 11, 12} = ∅
 
 ε-closure(δ(T5, )) = {3, 4, 5, 7, 9, 10, 12} = ∅
 
@@ -1058,51 +914,39 @@ digit
 
 <a name="br21"></a> 
 
-~~string~~
+~~str ing~~
 
 • DFA
 
 "
 
-T
+T2
 
-2
+lette r
 
-letter
+dig it
 
-letter
+lette r
 
-digit
+dig it
 
-digit
-
-letter
-
-digit
-
-T
-
-3
-
-T
-
-0
-
-T
-
-1
-
-T
-
-5
+lette r
 
 "
 
 "
 
-T
+T3
 
-4
+T0
+
+T1
+
+T5
+
+dig it
+
+T4
 
 
 
@@ -1110,13 +954,21 @@ T
 
 ~~id~~
 
-• alphabet: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, a, b,
+• alphabet: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y,
 
-c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+Z, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
 
-• regular expression: letter(digit|letter)\*
+• regu lar expression: lette r(dig it|lette r)\*
 
-digit
+dig it
+
+ε
+
+ε
+
+ε
+
+ε
 
 4
 
@@ -1126,15 +978,7 @@ digit
 
 7
 
-ε
-
-ε
-
-ε
-
-ε
-
-letter
+lette r
 
 ε
 
@@ -1154,7 +998,7 @@ letter
 
 9
 
-letter
+lette r
 
 
 
@@ -1166,19 +1010,19 @@ letter
 
 ε-closure(δ(T0, letter)) = {1, 2, 3, 4, 6, 9} = T1
 
-ε-closure(δ(T0, digit)) = ∅
+ε-closure(δ(T0, dig it)) = ∅
 
 ε-closure(δ(T1, letter)) = {3, 4, 6, 7, 8, 9} = T2
 
-ε-closure(δ(T1, digit)) = {3, 4, 5, 6, 8, 9} = T3
+ε-closure(δ(T1, dig it)) = {3, 4, 5, 6, 8, 9} = T3
 
 ε-closure(δ(T2, letter)) = {3, 4, 6, 7, 8, 9} = T2
 
-ε-closure(δ(T2, digit)) = {3, 4, 5, 6, 8, 9} = T3
+ε-closure(δ(T2, dig it)) = {3, 4, 5, 6, 8, 9} = T3
 
 ε-closure(δ(T3, letter)) = {3, 4, 6, 7, 8, 9} = T2
 
-ε-closure(δ(T3, digit)) = {3, 4, 5, 6, 8, 9} = T3
+ε-closure(δ(T3, dig it)) = {3, 4, 5, 6, 8, 9} = T3
 
 
 
@@ -1188,45 +1032,37 @@ letter
 
 • DFA
 
-letter
+lette r
 
-T
+T2
 
-2
+lette r
 
-letter
+dig it
 
-digit
+lette r
 
-letter
+T0
 
-T
+T1
 
-0
+lette r
 
-T
+dig it
 
-1
+dig it
 
-letter
-
-digit
-
-digit
-
-T
-
-3
+T3
 
 
 
 <a name="br25"></a> 
 
-~~comp~~
+~~co mp~~
 
 • alphabet: [!, <, =, >]
 
-• regular expression: ==|!=|<|>|<=|>=
+• regu lar expression: ==|!=|<|>|<=|>=
 
 \=
 
@@ -1248,6 +1084,10 @@ T
 
 \=
 
+ε
+
+ε
+
 5
 
 9
@@ -1256,43 +1096,25 @@ T
 
 7
 
-8
-
-ε
-
-ε
-
-ε
-
-ε
-
-2
-
-5
+8 ε
 
 4
 
-1
-
-0
-
-1
-
-1
-
-1
-
-2
+25
 
 ε
 
 ε
 
-2
+10
 
-6
+11
+
+12
 
 3
+
+26
 
 ε
 
@@ -1300,95 +1122,67 @@ T
 
 \>
 
-1
-
-3
-
-1
-
-4
-
-1
-
-5
-
-1
-
-6
+ε
 
 ε
 
 ε
+
+13
+
+17
+
+14
+
+18
+
+15
+
+19
+
+16
+
+20
 
 2
 
-7
-
-2
-
-ε
-
-1
-
-7
-
-1
-
-8
-
-1
-
-9
-
-2
-
-0
+27
 
 ε
 
 ε
 
-2
+ε
 
-8
+ε
 
 1
+
+28
 
 ε
 
 <
 
-\>
-
-2
-
-1
-
-2
-
-2
-
 ε
 
 ε
 
 ε
 
-2
+21
 
-9
+23
+
+22
 
 0
 
-2
+29
 
-3
+\>
 
-2
-
-4
-
-ε
+24
 
 ε
 
@@ -1396,7 +1190,7 @@ T
 
 <a name="br26"></a> 
 
-~~comp~~
+~~co mp~~
 
 ε-closure(0) = {0, 1, 2, 3, 4, 5, 9, 13, 17, 21, 23} = T0
 
@@ -1428,7 +1222,7 @@ T
 
 <a name="br27"></a> 
 
-~~comp~~
+~~co mp~~
 
 ε-closure(δ(T3, =)) = {16, 26, 27, 28, 29} = T7
 
@@ -1458,7 +1252,7 @@ T
 
 <a name="br28"></a> 
 
-~~comp~~
+~~co mp~~
 
 ε-closure(δ(T6, =)) = ∅
 
@@ -1488,14 +1282,10 @@ T
 
 <a name="br29"></a> 
 
-~~comp~~
+~~co mp~~
 
 • DFA
 
-T
-
-1
-
 \=
 
 \=
@@ -1504,67 +1294,59 @@ T
 
 \=
 
-T
+T1
 
-5
+T5
 
 \=
-
-T
-
-2
-
-T
-
-6
 
 !
 
-T
+T2
 
-0
+T3
+
+T4
+
+T6
+
+T7
+
+T8
+
+T0
 
 <
 
-T
-
-3
-
-T
-
-7
-
 \>
-
-T
-
-4
-
-T
-
-8
 
 
 
 <a name="br30"></a> 
 
-~~addsub~~
+~~a ddsub~~
 
 • alphabet: [+, -]
 
-• regular expression: +|-
+• regu lar expression: +|-
 
 \+
 
 \-
 
+ε
+
+ε
+
+ε
+
 1
 
 3
 
-2 ε
+2
 
-ε
+4
 
 5
 
@@ -1572,23 +1354,19 @@ T
 
 ε
 
-ε
-
-4
-
 
 
 <a name="br31"></a> 
 
-~~addsub~~
+~~a ddsub~~
 
 • DFA
+
+\+
 
 1
 
 2
-
-\+
 
 0
 
@@ -1600,31 +1378,33 @@ T
 
 ~~multidiv~~
 
-• alphabet: [\*, /]
+• alphabet: [ \*, /]
 
-• regular expression: \*|/
+• regu lar expression: \*|/
 
 \*
 
 /
 
+ε
+
+ε
+
+ε
+
 1
 
 3
 
-2 ε
+2
 
-ε
+4
 
 5
 
 0
 
 ε
-
-ε
-
-4
 
 
 
@@ -1634,11 +1414,11 @@ T
 
 • DFA
 
+\+
+
 1
 
 2
-
-\+
 
 0
 
@@ -1648,11 +1428,11 @@ T
 
 <a name="br34"></a> 
 
-~~whitespace~~
+~~w hite space~~
 
-• alphabet:[ , \t, \n]
+• alphabet:[ , \t,\n]
 
-• regular expression: \t| |\n
+• regu lar expression: \t| |\n
 
 2
 
@@ -1670,6 +1450,12 @@ T
 
 \t
 
+\n
+
+ε
+
+ε
+
 ε
 
 4
@@ -1680,15 +1466,9 @@ T
 
 7
 
-ε
-
-ε
-
 0
 
 9
-
-\n
 
 ε
 
@@ -1698,7 +1478,7 @@ T
 
 <a name="br35"></a> 
 
-~~whitespace~~
+~~w hite space~~
 
 ε-closure(0) = {0, 1, 2, 4, 6} = T0
 
@@ -1730,29 +1510,21 @@ T
 
 <a name="br36"></a> 
 
-~~whitespace~~
+~~w hite space~~
 
 • DFA
 
-T
+T1
 
-1
-
-T
-
-0
-
-T
-
-3
+T0
 
 \t
 
+T3
+
 \n
 
-T
-
-4
+T4
 
 
 
@@ -1772,25 +1544,25 @@ T
 
 <a name="br38"></a> 
 
-~~merged~~
+~~merge d~~
 
 
 
 <a name="br39"></a> 
 
-~~merged~~
+~~merge d~~
 
 ε-closure(0) = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 15, 20, 30, 35, 42, 49, 55} = T0
 
-ε-closure(δ(T0, +)) = {10, 14, 19, 29, 34, 41, 48, 54, 57} = T1 (addsub)
+ε-closure(δ(T0, +)) = {10, 14, 19, 29, 34, 41, 48, 54, 57} = T1 (a ddsub)
 
-ε-closure(δ(T0, -)) = {11, 14, 19, 29, 34, 41, 48, 52, 54, 57 } = T2 (addsub)
+ε-closure(δ(T0, -)) = {11, 14, 19, 29, 34, 41, 48, 52, 54, 57 } = T2 (a ddsub)
 
-ε-closure(δ(T2, digit\_)) = {51, 54, 57} = T3 (num)
+ε-closure(δ(T2, digit\_)) = {51, 54, 57} = T3 (nu m)
 
-ε-closure(δ(T3, digit)) = {53, 54, 57} = T4 (num)
+ε-closure(δ(T3, dig it)) = {53, 54, 57} = T4 (nu m)
 
-ε-closure(δ(T4, digit)) = {53, 54, 57} = T4 (num)
+ε-closure(δ(T4, dig it)) = {53, 54, 57} = T4 (nu m)
 
 ε-closure(δ(T0, \*)) = {12, 14, 19, 29, 34, 41, 48, 54, 57} = T5 (arithmetic)
 
@@ -1798,15 +1570,15 @@ T
 
 ε-closure(δ(T0, )) = {16, 19, 29, 34, 41, 48, 52, 54, 57 } = T7 (whitespace)
 
-ε-closure(δ(T0, \t)) = {17, 19, 29, 34, 41, 48, 52, 54, 57 } = T8 (whitespace)
+ε-closure(δ(T0, \t)) = {17, 1 9, 2 9, 34, 41, 48, 52, 54, 57 } = T8 (whitespace)
 
-ε-closure(δ(T0, \n)) = {18, 19, 29, 34, 41, 48, 52, 54, 57 } = T9 (whitespace)
+ε-closure(δ(T0, \n)) = {18, 1 9, 29, 34, 41, 48, 52, 54, 57 } = T9 (whitespace)
 
 
 
 <a name="br40"></a> 
 
-~~merged~~
+~~merge d~~
 
 ε-closure(δ(T0, =)) = {21, 56, 57} = T10 (assign)
 
@@ -1828,33 +1600,33 @@ T
 
 <a name="br41"></a> 
 
-~~merged~~
+~~merge d~~
 
 ε-closure(δ(T0, letter)) = {31, 34, 41, 48, 54, 57} = T18 (vtype)
 
 ε-closure(δ(T18, letter)) = {32, 34, 41, 48, 54, 57} = T19 (vtype)
 
-ε-closure(δ(T18, digit)) = {33, 34, 41, 48, 54, 57} = T20 (vtype)
+ε-closure(δ(T18, dig it)) = {33, 34, 41, 48, 54, 57} = T20 (vtype)
 
 ε-closure(δ(T19, letter)) = {32, 34, 41, 48, 54, 57} = T19 (vtype)
 
-ε-closure(δ(T19, digit)) = {33, 34, 41, 48, 54, 57} = T20 (vtype)
+ε-closure(δ(T19, dig it)) = {33, 34, 41, 48, 54, 57} = T20 (vtype)
 
 ε-closure(δ(T20, letter)) = {32, 34, 41, 48, 54, 57} = T19 (vtype)
 
-ε-closure(δ(T20, digit)) = {33, 34, 41, 48, 54, 57}} = T20 (vtype)
+ε-closure(δ(T20, dig it)) = {33, 34, 41, 48, 54, 57}} = T20 (vtype)
 
 
 
 <a name="br42"></a> 
 
-~~merged~~
+~~merge d~~
 
 ε-closure(δ(T0, ")) = {36} = T21
 
 ε-closure(δ(T21, letter)) = {37} = T22
 
-ε-closure(δ(T21, digit)) = {38} = T23
+ε-closure(δ(T21, dig it)) = {38} = T23
 
 ε-closure(δ(T21, )) = {39} = T24
 
@@ -1864,11 +1636,11 @@ T
 
 ε-closure(δ(T24, letter)) = {37} = T22
 
-ε-closure(δ(T19, digit)) = {38} = T23
+ε-closure(δ(T19, dig it)) = {38} = T23
 
-ε-closure(δ(T19, digit)) = {38} = T23
+ε-closure(δ(T19, dig it)) = {38} = T23
 
-ε-closure(δ(T19, digit)) = {38} = T23
+ε-closure(δ(T19, dig it)) = {38} = T23
 
 ε-closure(δ(T19, )) = {39} = T24
 
@@ -1880,7 +1652,7 @@ T
 
 <a name="br43"></a> 
 
-~~merged~~
+~~merge d~~
 
 ε-closure(δ(T21, ")) = {40, 41, 48, 54, 57} = T25 (string)
 
@@ -1894,35 +1666,35 @@ T
 
 <a name="br44"></a> 
 
-~~merged~~
+~~merge d~~
 
 ε-closure(δ(T0, ')) = {43} = T26
 
 ε-closure(δ(T26, letter)) = {44} = T27
 
-ε-closure(δ(T26, digit)) = {45} = T28
+ε-closure(δ(T26, dig it)) = {45} = T28
 
 ε-closure(δ(T26, )) = {46} = T29
 
-ε-closure(δ(T27, ')) = {47, 48, 54, 57} = T30 (char)
+ε-closure(δ(T27, ')) = { 47, 48, 54, 57} = T30 (char)
 
-ε-closure(δ(T28, ')) = {47, 48, 54, 57} = T30 (char)
+ε-closure(δ(T28, ')) = { 47, 48, 54, 57} = T30 (char)
 
-ε-closure(δ(T29, ')) = {47, 48, 54, 57} = T30 (char)
+ε-closure(δ(T29, ')) = { 47, 48, 54, 57} = T30 (char)
 
 
 
 <a name="br45"></a> 
 
-~~merged~~
+~~merge d~~
 
-ε-closure(δ(T0, 0)) = {50, 54, 57} = T31 (num)
+ε-closure(δ(T0, 0)) = {50, 54, 57} = T31 (nu m)
 
-ε-closure(δ(T0, digit\_)) = {51, 54, 57} = T32 (num)
+ε-closure(δ(T0, digit\_)) = {51, 54, 57} = T32 (nu m)
 
-ε-closure(δ(T32, digit)) = {53, 54, 57} = T33 (num)
+ε-closure(δ(T32, dig it)) = {53, 54, 57} = T33 (nu m)
 
-ε-closure(δ(T33, digit)) = {53, 54, 57} = T33 (num)
+ε-closure(δ(T33, dig it)) = {53, 54, 57} = T33 (nu m)
 
 
 
@@ -1944,7 +1716,7 @@ T
 
 1
 
-~~endmark~~
+~~en dmark~~
 
 $
 
@@ -1964,7 +1736,7 @@ $
 
 1
 
-~~rparen~~
+~~r paren~~
 
 )
 
@@ -1980,7 +1752,7 @@ $
 
 1
 
-~~rbrace~~
+~~rb race~~
 
 }
 
@@ -2012,185 +1784,165 @@ $
 
 <a name="br49"></a> 
 
-**2. Context-free Grammar**
+2\. Co ntext-free Gram mar
 
-**(Syntax Analyzer)**
+(Syntax Analyze r)
 
 
 
 <a name="br50"></a> 
 
-Production Rules
+Pro ductio n Rules
 
-**1. S -> CODE**
+1\. S -> CODE
 
-**12.EXPR -> CALL**
+12\. EXPR -> CALL
 
-**2. CODE -> VDECL CODE**
+2\. CODE -> VDECL CODE
 
-**3. CODE -> FDECL CODE**
+3\. CODE -> FDECL CODE
 
-**4. CODE -> ''**
+4\. CODE -> ''
 
-**13.EXPR -> TERM addsub EXPR**
+13\. EXPR -> TERM addsub EXPR
 
-**14.EXPR -> TERM**
+14\. EXPR -> TERM
 
-**15.TERM -> FACT multdiv TERM**
+15\. TERM -> FACT multdiv TERM
 
-**16.TERM -> FACT**
+16\. TERM -> FACT
 
-**5. VDECL -> vtype id**
+5\. VDECL -> vtype id semi
 
-**semi**
+6\. VDECL -> vtype ASSIGN semi
 
-**17.FACT -> num**
+7\. ASSIGN -> id assign RHS
 
-**6. VDECL -> vtype**
+8\. RHS -> EXPR
 
-**ASSIGN semi**
+17\. FACT -> num
 
-**18.FACT -> lparen EXPR rparen**
+18\. FACT -> lparen EXPR rparen
 
-**19.FACT -> id**
+19\. FACT -> id
 
-**7. ASSIGN -> id assign**
+9\. RHS -> char
 
-**RHS**
+20\. FDECL -> vtype id lparen ARG rparen lbrace
 
-**20.FDECL -> vtype id lparen ARG**
+BLOCK RETURN rbrace
 
-**rparen lbrace BLOCK RETURN**
+10\. RHS -> string
 
-**rbrace**
+21\. ARG -> vtype id MOREARGS
 
-**8. RHS -> EXPR**
+22\. ARG -> ''
 
-**9. RHS -> char**
-
-**10.RHS -> string**
-
-**11.RHS -> boolstr**
-
-**21.ARG -> vtype id MOREARGS**
-
-**22.ARG -> ''**
+11\. RHS -> boolstr
 
 
 
 <a name="br51"></a> 
 
-Production Rules
+Pro ductio n Rules
 
-**23.MOREARGS -> comma vtype id 35.MOREARGVAL -> comma EXPR**
+23\. MOREARGS -> comma vtype id MOREARGS
 
-**MOREARGS**
+24\. MOREARGS -> ''
 
-**MOREARGVAL**
+35\. MOREARGVAL -> comma EXPR
 
-**24.MOREARGS -> ''**
+MOREARGVAL
 
-**25.BLOCK -> STMT BLOCK**
+36\. MOREARGVAL -> ''
 
-**26.BLOCK -> ''**
+25\. BLOCK -> STMT BLOCK
 
-**36.MOREARGVAL -> ''**
+26\. BLOCK -> ''
 
-**37.COND**
+37\. COND -> COND\_EXPR LOGIC\_EXPR
 
-**->**
+38\. COND\_EXPR -> boolstr
 
-**COND\_EXPR**
+39\. COND\_EXPR -> FACT comp FACT
 
-**LOGIC\_EXPR**
+40\. LOGIC\_EXPR -> ''
 
-**38.COND\_EXPR -> boolstr**
+27\. STMT -> VDECL
 
-**39.COND\_EXPR -> FACT comp FACT**
+28\. STMT -> ASSIGN semi
 
-**40.LOGIC\_EXPR -> ''**
+29\. STMT -> CALL semi
 
-**27.STMT -> VDECL**
+41\. LOGIC\_EXPR -> LOGIC\_OP COND
 
-**28.STMT -> ASSIGN semi**
+42\. LOGIC\_OP -> and
 
-**29.STMT -> CALL semi**
+30\. STMT -> if lparen COND rparen lbrace BLOCK
 
-**41.LOGIC\_EXPR -> LOGIC\_OP**
+rbrace ELSE
 
-**COND**
+31\. STMT -> while lparen COND rparen lbrace
 
-**30.STMT -> if lparen COND rparen**
+BLOCK rbrace
 
-**lbrace BLOCK rbrace ELSE**
+43\. LOGIC\_OP -> or
 
-**42.LOGIC\_OP -> and**
+44\. ELSE -> else lbrace BLOCK rbrace
 
-**43.LOGIC\_OP -> or**
+45\. ELSE -> ’’
 
-**31.STMT -> while lparen COND**
+32\. CALL -> id lparen ARGVAL rparen
 
-**rparen lbrace BLOCK rbrace**
+33\. ARGVAL -> EXPR MOREARGVAL
 
-**32.CALL -> id lparen ARGVAL rparen 44.ELSE -> else lbrace BLOCK**
+34\. ARGVAL -> ''
 
-**rbrace**
-
-**33.ARGVAL -> EXPR MOREARGVAL**
-
-**34.ARGVAL -> ''**
-
-**45.ELSE -> ’’**
+46\. RETURN -> return RHS semi
 
 
 
 <a name="br52"></a> 
 
-Terminals
+Ter minals
 
-**1. vtype** for the types of variables and functions
+1\. vtype for the types of variables and functions
 
-**2. num** for signed integers
+2\. num for signed integers
 
-**3. char** for a single character
+3\. char for a single character
 
-**4. boolstr** for Boolean strings
+4\. boolstr for Boolean strings
 
-**5. string** for literal strings
+5\. string for literal strings
 
-**6. id** for the identifiers of variables and functions
+6\. id for the identifiers of variables and functions
 
-**7. if**, **else**, **while**, and **return** for if, else, while, and return statements
+7\. if, else, while, and return for i f, else, while, and return statements respectively
 
-respectively
+8\. addsub for +, and -
 
-**8. addsub** for +, and -
+9\. multidiv for \*, and /
 
-**9. multidiv** for \*, and /
+10\. assign for assignment operators
 
-**10.assign** for assignment operators
+11\. comp for comparison operators
 
-**11.comp** for comparison operators
+12\. semi and comma for semicolons and commas respectively
 
-**12.semi** and **comma** for semicolons and commas respectively
+13\. lparen, rparen, lbrace, and rbrace for (, ), {, and } respectively
 
-**13.lparen, rparen, lbrace**, and **rbrace** for (, ), {, and } respectively
-
-**14.and,** and **or** for & and |
+14\. and, and or for & and |
 
 
 
 <a name="br53"></a> 
 
-Non-termianls
+No n-ter mianls
 
-EXPR, VDECL, LOGIC\_EXPR, CODE, CALL, ELSE, ARGVAL,
+EXPR, VDECL, LOGIC\_EXPR, CODE, CALL, ELSE, ARGVAL, MOREARGVAL,
 
-MOREARGVAL,
-
-BLOCK, ASSIGN,STMT, FACT, COND, MOREARGS, RHS, S,
-
-RETURN,
+BLOCK, ASSIGN,STMT, FAC T, COND, MOREARGS, RHS, S, RETURN,
 
 COND\_EXPR, TERM, FDECL, ARG, LOGIC\_OP
 
@@ -2198,11 +1950,9 @@ COND\_EXPR, TERM, FDECL, ARG, LOGIC\_OP
 
 <a name="br54"></a> 
 
-Descriptions
+Descr iptio ns
 
-1\. A file of source code is constructed with zero or more declarations of functions or
-
-variables
+1\. A file of source code is constructed with zero or more declarations of functions or variables
 
 2\. Declaration of a variable is allowed regardless of initialization
 
@@ -2238,23 +1988,33 @@ e) While statement
 
 <a name="br55"></a> 
 
-Descriptions
+Descr iptio ns
 
-7\. If and while statements include one or more conditions that comprise Boolean
+7\. If and while statements include one or more conditions that comprise Boolean values generated by
 
-values generated by comparison operations or logical operations
+comparison operations or logical operations
 
 8\. If statement stands alone or with an else statement
 
 9\. A return statement returns five types
 
-a) Expression
+a)
 
-b) String
+b)
 
-c) Character
+c)
 
-d) Boolean
+d)
 
-e) Function return value
+e)
+
+Expression
+
+String
+
+Character
+
+Boolean
+
+Function return value
 
