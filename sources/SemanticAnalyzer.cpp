@@ -2,7 +2,7 @@
 // Created by 박영재 on 2023/08/15.
 //
 
-#include "SemanticAnalyzer.h"
+#include "../headers/SemanticAnalyzer.h"
 
 SemanticAnalyzer::SemanticAnalyzer(Node* header){
     this->AST = header;

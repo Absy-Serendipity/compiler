@@ -35,7 +35,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17 -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics"
+					"fragment" : "-g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics"
 				}
 			],
 			"language" : "CXX",
@@ -126,7 +126,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "SyntaxAnalyzer.cpp",
+			"path" : "sources/SyntaxAnalyzer.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -148,12 +148,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "SemanticAnalyzer.cpp",
+			"path" : "sources/SemanticAnalyzer.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "SemanticAnalyzer.h",
+			"path" : "headers/SemanticAnalyzer.h",
 			"sourceGroupIndex" : 1
 		}
 	],

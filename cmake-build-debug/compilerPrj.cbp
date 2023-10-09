@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="compilerPrj"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/genius-park/Desktop/compilerPrj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="compilerPrj">
+				<Option output="/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/compilerPrj" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/genius-park/Desktop/compilerPrj/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 compilerPrj"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="compilerPrj/fast">
+				<Option output="/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/compilerPrj" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/genius-park/Desktop/compilerPrj/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 compilerPrj/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/genius-park/Desktop/compilerPrj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/genius-park/Desktop/compilerPrj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/genius-park/Desktop/compilerPrj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/genius-park/Desktop/compilerPrj/headers/LexicalAnalyzer.h">
+			<Option target="compilerPrj"/>
+		</Unit>
+		<Unit filename="/Users/genius-park/Desktop/compilerPrj/headers/Node.h">
+			<Option target="compilerPrj"/>
+		</Unit>
+		<Unit filename="/Users/genius-park/Desktop/compilerPrj/headers/SemanticAnalyzer.h">
+			<Option target="compilerPrj"/>
+		</Unit>
+		<Unit filename="/Users/genius-park/Desktop/compilerPrj/headers/SyntaxAnalyzer.h">
+			<Option target="compilerPrj"/>
+		</Unit>
+		<Unit filename="/Users/genius-park/Desktop/compilerPrj/sources/LexicalAnalyzer.cpp">
+			<Option target="compilerPrj"/>
+		</Unit>
+		<Unit filename="/Users/genius-park/Desktop/compilerPrj/sources/Node.cpp">
+			<Option target="compilerPrj"/>
+		</Unit>
+		<Unit filename="/Users/genius-park/Desktop/compilerPrj/sources/SemanticAnalyzer.cpp">
+			<Option target="compilerPrj"/>
+		</Unit>
+		<Unit filename="/Users/genius-park/Desktop/compilerPrj/sources/SyntaxAnalyzer.cpp">
+			<Option target="compilerPrj"/>
+		</Unit>
+		<Unit filename="/Users/genius-park/Desktop/compilerPrj/sources/main.cpp">
+			<Option target="compilerPrj"/>
+		</Unit>
+		<Unit filename="/Users/genius-park/Desktop/compilerPrj/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

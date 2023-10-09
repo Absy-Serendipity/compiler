@@ -2,7 +2,7 @@
 // Created by 박영재 on 2023/08/10.
 //
 
-#include "headers/SyntaxAnalyzer.h"
+#include "../headers/SyntaxAnalyzer.h"
 
 // constructor
 SyntaxAnalyzer::SyntaxAnalyzer(const LexicalAnalyzer& lexicalAnalyzer): lexicalAnalyzer(lexicalAnalyzer){};

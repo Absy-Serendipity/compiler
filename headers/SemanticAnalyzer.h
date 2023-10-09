@@ -5,8 +5,8 @@
 #ifndef COMPILERPRJ_SEMANTICANALYZER_H
 #define COMPILERPRJ_SEMANTICANALYZER_H
 
-#include "headers/Node.h"
-#include "headers/LexicalAnalyzer.h"
+#include "Node.h"
+#include "LexicalAnalyzer.h"
 #include <unordered_map>
 #include <queue>
 
